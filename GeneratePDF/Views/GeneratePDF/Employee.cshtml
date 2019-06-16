@@ -1,0 +1,39 @@
+﻿@model GeneratePDF.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee Details</h2>
+<div style="text-align:right">@Html.ActionLink("Print Employee", "PrintEmployee", new { id = Model.ID })</div>
+<br />
+<div style="text-align:right">@Html.ActionLink("Convet to Image", "EmployeeImage", new { id = Model.ID })</div>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Back To List", "Employees")
+        </td>
+</table>
